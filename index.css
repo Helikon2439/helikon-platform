@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body, #root { height: 100%; overflow: hidden; }
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: #07080c;
+    color: #e2e8f4;
+    -webkit-font-smoothing: antialiased;
+  }
+  .scrollbar-none::-webkit-scrollbar { display: none; }
+  .scrollbar-none { scrollbar-width: none; }
+}
+
+@layer utilities {
+  .font-bebas { font-family: 'Bebas Neue', sans-serif; }
+  .font-mono-custom { font-family: 'JetBrains Mono', monospace; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(14px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeGo {
+  from { opacity: 1; }
+  to   { opacity: 0; pointer-events: none; }
+}
+
+.animate-fade-up { animation: fadeUp 0.2s ease; }
+.animate-slide-in { animation: slideIn 0.2s ease; }
